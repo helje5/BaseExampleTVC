@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PizzaTableViewCell: UITableViewCell {
+class PizzaTableViewCell: UITableViewCell, FoodCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     

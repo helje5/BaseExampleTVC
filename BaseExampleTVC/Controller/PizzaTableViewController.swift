@@ -8,32 +8,15 @@
 
 import UIKit
 
-class PizzaTableViewController: BaseTableViewController {
-
-    var data = [Pizza]()
+class PizzaTableViewController: UITableViewController {
+  
+    let dataSource = UniformCellTVDataSource<Pizza, PizzaTableViewCell>(items: [
+        Pizza(name: "Hawaii", calzone: false),
+        Pizza(name: "Calzobne", calzone: true)
+    ], cellID: "pizzaCell")
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let hawaii = Pizza(name: "Hawaii", calzone: false)
-        let calzone = Pizza(name: "Calzobne", calzone: true)
-        
-        data.append(hawaii)
-        data.append(calzone)
-        
+        tableView?.dataSource = dataSource
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "pizzaCell", for: indexPath) as! PizzaTableViewCell
-        cell.titleLabel.text = data[indexPath.row].title
-        return cell
-    }
-
-
-
 }
