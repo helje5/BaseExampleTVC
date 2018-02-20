@@ -10,8 +10,6 @@ import UIKit
 
 class BurgerTableViewController: BaseTableViewController {
 
-    var data = [Burger]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

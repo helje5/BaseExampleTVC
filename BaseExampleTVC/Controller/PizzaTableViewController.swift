@@ -10,8 +10,6 @@ import UIKit
 
 class PizzaTableViewController: BaseTableViewController {
 
-    var data = [Pizza]()
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
